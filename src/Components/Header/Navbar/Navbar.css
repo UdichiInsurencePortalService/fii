@@ -1,0 +1,58 @@
+nav {
+  background-color: #ffffff; /* white background */
+  color: #1f2937; /* gray text */
+  display: flex;
+  justify-content: center   ;
+  align-items: center;
+  padding: 12px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e5e7eb; /* light gray border */
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2563eb; /* blue brand color */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  position: relative;
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  z-index: 999;
+}
+
+nav li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #2563eb; /* blue underline */
+  transition:  0.3s ease-out;
+  z-index: 999;
+}
+
+nav li:hover {
+  color: #2563eb;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+
+nav a:hover {
+  color: #2563eb; /* hover blue */
+}
