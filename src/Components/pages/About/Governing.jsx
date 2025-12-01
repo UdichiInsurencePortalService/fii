@@ -36,9 +36,9 @@ const Governing = () => {
   // Council Members
   const councilMembers = [
     {
-      name: "Malbika Mukherji",
-      position: "Member",
-      photo: Malabika,
+      name: "Dinesh Kumar ",
+      position: "Treasure",
+      photo: Dineshkumar,
     },
     {
       name: "Ashish Sinha ",
@@ -61,9 +61,9 @@ const Governing = () => {
       photo: Sarmitasaha,
     },
     {
-      name: "Dinesh Kumar ",
-      position: "Treasure",
-      photo: Dineshkumar,
+      name: "Malbika Mukherji",
+      position: "Member",
+      photo: Malabika,
     },
     
   ];

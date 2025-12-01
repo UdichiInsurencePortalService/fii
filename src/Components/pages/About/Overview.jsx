@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import abouts from "../../../assets/fii.png";
 const Overview = () => {
   useEffect(() => {
     AOS.init({
@@ -26,7 +26,10 @@ const Overview = () => {
       </div>
 
       {/* ABOUT SECTION */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center" data-aos="fade-up">
+      <div
+        className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center"
+        data-aos="fade-up"
+      >
         {/* TEXT CONTENT */}
         <div className="space-y-3 sm:space-y-4 order-2 md:order-1">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">
@@ -53,11 +56,10 @@ const Overview = () => {
             growth across all sectors.
           </p>
         </div>
-
         {/* IMAGE */}
         <div className="order-1 md:order-2">
           <img
-            src="https://via.placeholder.com/500"
+            src={abouts}
             alt="FII Overview"
             className="rounded-lg sm:rounded-xl shadow-lg w-full h-auto"
           />
@@ -67,7 +69,10 @@ const Overview = () => {
       {/* FOUNDATION DETAILS */}
       <div className="bg-gray-50 py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-md border border-gray-100" data-aos="flip-up">
+          <div
+            className="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-md border border-gray-100"
+            data-aos="flip-up"
+          >
             <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
               <span className="text-xl sm:text-2xl md:text-3xl">📅</span>
             </div>
@@ -79,7 +84,10 @@ const Overview = () => {
             </p>
           </div>
 
-          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-md border border-gray-100" data-aos="flip-up">
+          <div
+            className="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-md border border-gray-100"
+            data-aos="flip-up"
+          >
             <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
               <span className="text-xl sm:text-2xl md:text-3xl">📋</span>
             </div>
@@ -91,7 +99,10 @@ const Overview = () => {
             </p>
           </div>
 
-          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-md border border-gray-100 sm:col-span-2 md:col-span-1" data-aos="flip-up">
+          <div
+            className="bg-white p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl shadow-md border border-gray-100 sm:col-span-2 md:col-span-1"
+            data-aos="flip-up"
+          >
             <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
               <span className="text-xl sm:text-2xl md:text-3xl">🏢</span>
             </div>
@@ -112,29 +123,49 @@ const Overview = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-          <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4" data-aos="fade-right">
-            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">🚀</div>
+          <div
+            className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4"
+            data-aos="fade-right"
+          >
+            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">
+              🚀
+            </div>
             <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
               Commitment to industrial growth and national development
             </p>
           </div>
 
-          <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4" data-aos="fade-left">
-            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">⚖️</div>
+          <div
+            className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4"
+            data-aos="fade-left"
+          >
+            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">
+              ⚖️
+            </div>
             <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
               Ethical and transparent work culture
             </p>
           </div>
 
-          <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4" data-aos="fade-up-right">
-            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">💼</div>
+          <div
+            className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4"
+            data-aos="fade-up-right"
+          >
+            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">
+              💼
+            </div>
             <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
               Empowerment of MSMEs and new industries
             </p>
           </div>
 
-          <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4" data-aos="fade-up-left">
-            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">🌱</div>
+          <div
+            className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 flex items-start gap-2 sm:gap-3 md:gap-4"
+            data-aos="fade-up-left"
+          >
+            <div className="text-xl sm:text-2xl md:text-3xl flex-shrink-0">
+              🌱
+            </div>
             <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
               Promoting innovation, sustainability, and collaboration
             </p>

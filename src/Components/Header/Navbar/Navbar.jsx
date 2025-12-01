@@ -13,7 +13,11 @@ const Navbar = () => {
       "/Institutional",
       "/industry",
       "/individual-associate",
-      "/benefits"
+      "/benefits",
+      "/Research",
+      "/workshops-seminars",
+      "/csr-social-impact",
+      "/media-gallery"
     ];
 
     if (errorPaths.includes(subItem.path)) {
@@ -60,15 +64,22 @@ const Navbar = () => {
     {
       name: "Events & News",
       subItems: [
-        { name: "Upcoming Events", path: "/upcoming-events" },
-        { name: "News & Press Releases", path: "/press-releases" },
+        { name: "Upcoming Events", path: "/Upcomingevents" },
+        { name: "News & Press Releases", path: "/Pressreleases" },
         { name: "Media Gallery", path: "/media-gallery" },
       ],
     },
-    { name: "Collaboration", path: "/collaboration", subItems: [] },
-    { name: "Gallery", path: "/gallery", subItems: [] },
-    { name: "Join FII", path: "/join-fii", subItems: [] },
-    { name: "Contact", path: "/contact", subItems: [] },
+    {
+      name: "FII in News",
+      subItems: [
+        { name: "FII Daily Business News Updates", path: "/Skill" },
+        // { name: "Industry Members", path: "/industry" },
+      ],
+    },
+    // { name: "Collaboration", path: "/collaboration", subItems: [] },
+    { name: "Gallery", path: "/Gallery", subItems: [] },
+    // { name: "Join FII", path: "/join-fii", subItems: [] },
+    { name: "Contact", path: "/Contact", subItems: [] },
   ];
 
   const toggleDropdown = (index) => {
@@ -90,7 +101,7 @@ const Navbar = () => {
             <Link to="/" className="flex flex-col items-center text-center">
               <img src={logo} alt="FII Logo" height={70} width={65} />
               <h1 className="text-white text-sm font-medium">
-                FEDERATION OF INDIAN INDUSTRY
+                FEDERATION OF Institutes & Industries
               </h1>
             </Link>
           </div>
