@@ -27,7 +27,7 @@ const Governing = () => {
     name: "Mr. Sandip Basu",
     position: "Chairperson",
     photo: photo,
-    bio: "Mr. Sandip Basu brings over 52 years of industry experience in manufacturing and innovation. He has been instrumental in shaping policies that support industrial growth and sustainable development across India.",
+    bio: "Mr. Sandip Basu brings over 32 years of industry experience in manufacturing and innovation. He has been instrumental in shaping policies that support industrial growth and sustainable development across India.",
     email: "sandip.basu2403@gmail.com",
     linkedin: "#",
   };

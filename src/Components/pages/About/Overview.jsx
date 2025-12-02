@@ -95,7 +95,7 @@ const Overview = () => {
               Registration Number
             </h3>
             <p className="text-gray-600 mt-1 sm:mt-2 md:mt-3 text-center text-sm sm:text-base md:text-lg">
-              2318
+              S/2318
             </p>
           </div>
 
@@ -172,26 +172,7 @@ const Overview = () => {
           </div>
         </div>
       </div>
-
-      {/* VIDEO INTRODUCTION */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 pb-8 sm:pb-12 md:pb-16">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 md:mb-8 text-center">
-          Video Introduction
-        </h2>
-
-        <div className="rounded-lg sm:rounded-xl overflow-hidden shadow-lg border-2 border-emerald-100">
-          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/rKE57SR9SNs?si=POKQLptFwLuXeXaT"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
-
+      
       {/* MAP SECTION */}
       <div className="pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-12 md:pb-16">
         <div className="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 xl:h-[450px]">

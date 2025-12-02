@@ -11,7 +11,7 @@ const Applyform = () => {
         
         }, []);
 
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('advantages');
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -21,7 +21,7 @@ const Applyform = () => {
   };
 
   return (
-    <div className="mt-20 min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="mt-15 min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 px-2">
@@ -164,6 +164,7 @@ const Applyform = () => {
         )}
 
         {/* Advantages Tab */}
+
         {activeTab === 'advantages' && (
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">

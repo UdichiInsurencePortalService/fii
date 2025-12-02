@@ -48,7 +48,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="mt-20 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-16 px-4">
+    <div className="mt-15 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-16 px-4">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-16 text-center opacity-0 animate-fade-in">
         <h1 className="text-6xl font-bold text-white mb-4 tracking-tight">

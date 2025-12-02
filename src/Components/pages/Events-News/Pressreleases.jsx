@@ -85,7 +85,7 @@ const PressReleases = () => {
         }}></div>
         
         <div className="relative max-w-7xl mx-auto text-center" data-aos="fade-down">
-          <div className="inline-flex items-center justify-center p-2 bg-blue-500/20 rounded-full mb-6">
+          <div className="mt-10 inline-flex items-center justify-center p-2 bg-blue-500/20 rounded-full mb-6">
             <Newspaper className="w-8 h-8 text-blue-300" />
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">

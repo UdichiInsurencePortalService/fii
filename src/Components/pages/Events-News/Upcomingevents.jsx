@@ -92,7 +92,7 @@ const UpcomingEvents = () => {
     : events.filter(event => event.category.toLowerCase() === filter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="mt-15 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 py-20 px-4">
         <div className="absolute inset-0 bg-black opacity-10"></div>

@@ -13,11 +13,11 @@ const Navbar = () => {
       "/Institutional",
       "/industry",
       "/individual-associate",
-      "/benefits",
+      // "/benefits",
       "/Research",
       "/workshops-seminars",
       "/csr-social-impact",
-      "/media-gallery"
+      "/media-gallery",
     ];
 
     if (errorPaths.includes(subItem.path)) {
@@ -47,8 +47,11 @@ const Navbar = () => {
       subItems: [
         { name: "Institutional Members", path: "/Institutional" },
         { name: "Industry Members", path: "/industry" },
-        { name: "Individual / Associate Members", path: "/individual-associate" },
-        { name: "Membership Benefits", path: "/benefits" },
+        {
+          name: "Individual / Associate Members",
+          path: "/individual-associate",
+        },
+        { name: "Membership Advantage", path: "/apply#Advantage" },
         { name: "Apply for Membership", path: "/apply" },
       ],
     },
@@ -95,7 +98,6 @@ const Navbar = () => {
     <nav className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center justify-center">
             <Link to="/" className="flex flex-col items-center text-center">
@@ -116,7 +118,9 @@ const Navbar = () => {
                     className="text-white px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1"
                   >
                     {item.name}
-                    {item.subItems.length > 0 && <ChevronDown className="w-4 h-4" />}
+                    {item.subItems.length > 0 && (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
                   </Link>
 
                   {/* Desktop Dropdown */}
@@ -127,7 +131,10 @@ const Navbar = () => {
                           <Link
                             key={subIndex}
                             to={subItem.path}
-                            onClick={(e) => handleClick(e, subItem)}
+                            onClick={(e) => {
+                              handleClick(e, subItem);
+                              closeMenu(); // 👈 MENU CLOSE ADDED
+                            }}
                             className="block px-4 py-2.5 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
                           >
                             {subItem.name}
@@ -149,21 +156,35 @@ const Navbar = () => {
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor">
                 {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>
           </div>
-
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden transition-all duration-300 ${isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
+      <div
+        className={`lg:hidden transition-all duration-300 ${
+          isOpen
+            ? "max-h-[600px] opacity-100"
+            : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
         <ul className="px-2 pt-2 pb-3 space-y-1 bg-indigo-700">
-
           {navItems.map((item, index) => (
             <li key={index}>
               <div>
@@ -189,7 +210,9 @@ const Navbar = () => {
                       className="text-white p-2"
                     >
                       <ChevronDown
-                        className={`w-5 h-5 transition-transform ${openDropdown === index ? "rotate-180" : ""}`}
+                        className={`w-5 h-5 transition-transform ${
+                          openDropdown === index ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
                   )}
@@ -197,13 +220,20 @@ const Navbar = () => {
 
                 {/* Mobile Dropdown */}
                 {item.subItems.length > 0 && (
-                  <div className={`overflow-hidden transition-all duration-300 ${openDropdown === index ? "max-h-96 mt-1" : "max-h-0"}`}>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openDropdown === index ? "max-h-96 mt-1" : "max-h-0"
+                    }`}
+                  >
                     <div className="ml-4 p-2 bg-indigo-800 rounded-lg">
                       {item.subItems.map((subItem, subIndex) => (
                         <Link
                           key={subIndex}
                           to={subItem.path}
-                          onClick={(e) => handleClick(e, subItem)}
+                          onClick={(e) => {
+                            handleClick(e, subItem);
+                            closeMenu(); // 👈 MENU CLOSE ADDED
+                          }}
                           className="block px-3 py-2 text-sm text-white hover:bg-white hover:bg-opacity-20 rounded-md"
                         >
                           {subItem.name}
@@ -212,11 +242,9 @@ const Navbar = () => {
                     </div>
                   </div>
                 )}
-
               </div>
             </li>
           ))}
-
         </ul>
       </div>
     </nav>
