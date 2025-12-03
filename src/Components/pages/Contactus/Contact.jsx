@@ -1,74 +1,88 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Linkedin, Instagram, Youtube, CheckCircle, X } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  Facebook,
+  Linkedin,
+  Instagram,
+  Youtube,
+  CheckCircle,
+  X,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [showToast, setShowToast] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
   // IMPORTANT: Replace 'xyzapdvo' with YOUR actual Formspree form ID
-  const FORMSPREE_ID = 'xyzapdvo';
+  const FORMSPREE_ID = "xyzapdvo";
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
     // Clear error for this field when user starts typing
     if (errors[e.target.name]) {
       setErrors({
         ...errors,
-        [e.target.name]: null
+        [e.target.name]: null,
       });
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Basic validation
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-    
+
     setSubmitting(true);
     setErrors({});
-    
+
     try {
       // Correct Formspree URL format - just the ID, not the full URL
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         // Show toast notification
         setShowToast(true);
         // Reset form
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: "", email: "", phone: "", message: "" });
         // Hide toast after 5 seconds
         setTimeout(() => setShowToast(false), 5000);
       } else {
-        setErrors({ submit: 'Failed to send message. Please try again.' });
+        setErrors({ submit: "Failed to send message. Please try again." });
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      setErrors({ submit: 'Network error. Please check your connection and try again.' });
+      console.error("Form submission error:", error);
+      setErrors({
+        submit: "Network error. Please check your connection and try again.",
+      });
     } finally {
       setSubmitting(false);
     }
@@ -77,18 +91,20 @@ const Contact = () => {
   const offices = [
     {
       type: "Registered Office",
-      address: "B-121 A, First Floor Flat No-04, KH. No. 171/2, Paryavarn Compleex",
+      address:
+        "B-121 A, First Floor Flat No-04, KH. No. 171/2, Paryavarn Compleex",
       city: "New Delhi, India Pin: 110080",
       country: "India",
-      icon: "🏢"
+      icon: "🏢",
     },
     {
       type: "Corporate Office",
-      address: "Plot No- C, 127, C Block, Sector 10, Noida, Uttar Pradesh 201301",
+      address:
+        "Plot No- C, 127, C Block, Sector 10, Noida, Uttar Pradesh 201301",
       city: "Uttar Pradesh 201301",
       country: "India",
-      icon: "🏛️"
-    }
+      icon: "🏛️",
+    },
   ];
 
   const contactInfo = [
@@ -96,27 +112,47 @@ const Contact = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone Numbers",
       details: ["+91 9876543210"],
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Address",
       details: ["info@fiiindia.org", "support@fiiindia.org"],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Working Hours",
       details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 2:00 PM"],
-      color: "from-purple-500 to-pink-500"
-    }
+      color: "from-purple-500 to-pink-500",
+    },
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, url: 'https://linkedin.com', color: 'bg-blue-600 hover:bg-blue-700' },
-    { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, url: 'https://facebook.com', color: 'bg-blue-500 hover:bg-blue-600' },
-    { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, url: 'https://instagram.com', color: 'bg-pink-600 hover:bg-pink-700' },
-    { name: 'YouTube', icon: <Youtube className="w-5 h-5" />, url: 'https://youtube.com', color: 'bg-red-600 hover:bg-red-700' }
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="w-5 h-5" />,
+      url: "https://linkedin.com",
+      color: "bg-blue-600 hover:bg-blue-700",
+    },
+    {
+      name: "Facebook",
+      icon: <Facebook className="w-5 h-5" />,
+      url: "https://facebook.com",
+      color: "bg-blue-500 hover:bg-blue-600",
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram className="w-5 h-5" />,
+      url: "https://instagram.com",
+      color: "bg-pink-600 hover:bg-pink-700",
+    },
+    {
+      name: "YouTube",
+      icon: <Youtube className="w-5 h-5" />,
+      url: "https://youtube.com",
+      color: "bg-red-600 hover:bg-red-700",
+    },
   ];
 
   return (
@@ -128,9 +164,11 @@ const Contact = () => {
             <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
             <div className="flex-1">
               <h4 className="font-bold text-gray-900">Form Submitted!</h4>
-              <p className="text-sm text-gray-600">Thank you for reaching out. We'll respond soon.</p>
+              <p className="text-sm text-gray-600">
+                Thank you for reaching out. We'll respond soon.
+              </p>
             </div>
-            <button 
+            <button
               onClick={() => setShowToast(false)}
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
@@ -143,16 +181,21 @@ const Contact = () => {
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 py-20 px-4">
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
-        }}></div>
-        
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+          }}
+        ></div>
+
         <div className="relative max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Get In Touch
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            We'd love to hear from you. Our team is always here to help and answer your questions.
+            We'd love to hear from you. Our team is always here to help and
+            answer your questions.
           </p>
         </div>
       </div>
@@ -168,12 +211,18 @@ const Contact = () => {
             >
               <div className={`h-2 bg-gradient-to-r ${info.color}`}></div>
               <div className="p-6 text-center">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${info.color} text-white mb-4 group-hover:scale-110 transition-transform`}>
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r ${info.color} text-white mb-4 group-hover:scale-110 transition-transform`}
+                >
                   {info.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{info.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  {info.title}
+                </h3>
                 {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-gray-600 text-sm mb-1">{detail}</p>
+                  <p key={idx} className="text-gray-600 text-sm mb-1">
+                    {detail}
+                  </p>
                 ))}
               </div>
             </div>
@@ -184,7 +233,9 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Office Locations */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Offices</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Our Offices
+            </h2>
             <div className="space-y-6">
               {offices.map((office, index) => (
                 <div
@@ -202,7 +253,9 @@ const Contact = () => {
                         <div>
                           <p className="text-sm">{office.address}</p>
                           <p className="text-sm">{office.city}</p>
-                          <p className="text-sm font-semibold">{office.country}</p>
+                          <p className="text-sm font-semibold">
+                            {office.country}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -213,7 +266,9 @@ const Contact = () => {
 
             {/* Social Media Links */}
             <div className="mt-8 bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Connect With Us</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Connect With Us
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social, index) => (
                   <a
@@ -234,15 +289,17 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Send Us a Message
+              </h2>
+
               <div className="space-y-6">
                 {errors.submit && (
                   <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl">
                     {errors.submit}
                   </div>
                 )}
-                
+
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Full Name *
@@ -304,7 +361,9 @@ const Contact = () => {
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                   {errors.message && (
-                    <p className="text-red-600 text-sm mt-1">{errors.message}</p>
+                    <p className="text-red-600 text-sm mt-1">
+                      {errors.message}
+                    </p>
                   )}
                 </div>
 
@@ -313,8 +372,10 @@ const Contact = () => {
                   disabled={submitting}
                   className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl group disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{submitting ? 'Sending...' : 'Send Message'}</span>
-                  {!submitting && <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />}
+                  <span>{submitting ? "Sending..." : "Send Message"}</span>
+                  {!submitting && (
+                    <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  )}
                 </button>
               </div>
             </div>
@@ -354,7 +415,9 @@ const Contact = () => {
             Our team is available to assist you with any inquiries you may have.
           </p>
           <a
-            href="mailto:info@fiiindia.org"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=fiiofficial184@gmail.com&su=Membership%20Inquiry&body=Hello%20FII%20Team%2C%0A%0AI%20want%20to%20know%20about%20membership."
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <Mail className="w-5 h-5 mr-2" />
@@ -362,7 +425,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-
+      
       <style>{`
         @keyframes slide-in {
           from {

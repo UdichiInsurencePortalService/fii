@@ -147,7 +147,6 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <button
@@ -175,7 +174,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <div
         className={`lg:hidden transition-all duration-300 ${
@@ -250,5 +248,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;

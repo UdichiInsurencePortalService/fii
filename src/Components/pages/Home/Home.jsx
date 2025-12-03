@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import img1 from "../../../assets/photo1.jpg";
-import img2 from "../../../assets/photo2.jpg";
-import img3 from "../../../assets/photo3.jpg";
+import img1 from "../../../assets/photo4.jpg";
+import img2 from "../../../assets/photo5.jpg";
+import img3 from "../../../assets/photo6.jpg";
 import { CalendarDays } from "lucide-react";
 // import React,{useEffect} from "react";
 import AOS from "aos";

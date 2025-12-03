@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,10 +15,10 @@ const Footer = () => {
                   Quick Links
                 </h3>
                 <ul className="space-y-2">
-                  <li className="hover:text-white transition">Home</li>
-                  <li className="hover:text-white transition">About Us</li>
-                  <li className="hover:text-white transition">Membership</li>
-                  <li className="hover:text-white transition">Contact</li>
+                 <li> <Link to="/" className="hover:text-white transition">Home</Link></li>
+                  <li><Link to="overview" className="hover:text-white transition">About Us</Link></li>
+                 <li> <Link to="/Gallery" className="hover:text-white transition">Gallery</Link> </li>
+                 <li> <Link to="/Contact" className="hover:text-white transition">Contact</Link></li>
                 </ul>
               </div>
 
@@ -26,10 +27,11 @@ const Footer = () => {
                 <h3 className="text-lg font-semibold mb-4 text-white">
                   Address
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm ">
                   Federation of Institute & Industries (FII) <br />
-                  Sector 10, Delhi, India <br />
-                  Pin: 110070
+                  Plot No- C, 127, C Block, Sector 10, Noida, Uttar Pradesh 201301 Uttar Pradesh 
+                  <br />
+                  Pin: 201301
                 </p>
               </div>
 
@@ -38,8 +40,8 @@ const Footer = () => {
                 <h3 className="text-lg font-semibold mb-4 text-white">
                   Contact
                 </h3>
-                <p>Email: info@fiiindia.org</p>
-                <p>Phone: +91 9876543210</p>
+                <p className="cursor-pointer">Email: fiiofficial184@gmail.com</p>
+                <p>Phone: +91 08069409202</p>
               </div>
 
               {/* Social Media */}
