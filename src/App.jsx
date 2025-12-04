@@ -17,6 +17,8 @@ import Upcomingevents from "./Components/pages/Events-News/Upcomingevents";
 import Pressreleases from "./Components/pages/Events-News/Pressreleases";
 import Contact from "./Components/pages/Contactus/Contact";
 import Gallery from "./Components/pages/Gallery/Gallery";
+import Newsactivity from "./Components/pages/Events-News/Newsactivity";
+import Dailynews from "./Components/pages/Fii-News/Dailynews";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
         <Route path="/Pressreleases" element={<Pressreleases />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/Newsactivity" element={<Newsactivity />} />
+        <Route path="/DailyNews" element={<Dailynews />} />
       </Routes>
 
       <Footer />

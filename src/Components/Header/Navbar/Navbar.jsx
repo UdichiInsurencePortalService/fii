@@ -17,7 +17,7 @@ const Navbar = () => {
       "/Research",
       "/workshops-seminars",
       "/csr-social-impact",
-      "/media-gallery",
+      // "/media-gallery",
     ];
 
     if (errorPaths.includes(subItem.path)) {
@@ -69,13 +69,13 @@ const Navbar = () => {
       subItems: [
         { name: "Upcoming Events", path: "/Upcomingevents" },
         { name: "News & Press Releases", path: "/Pressreleases" },
-        { name: "Media Gallery", path: "/media-gallery" },
+        { name: "News Activity", path: "/Newsactivity" },
       ],
     },
     {
       name: "FII in News",
       subItems: [
-        { name: "FII Daily Business News Updates", path: "/Skill" },
+        { name: "FII Daily Business News Updates", path: "/DailyNews" },
         // { name: "Industry Members", path: "/industry" },
       ],
     },
