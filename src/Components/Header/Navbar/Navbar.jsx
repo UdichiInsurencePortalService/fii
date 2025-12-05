@@ -101,7 +101,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center justify-center">
             <Link to="/" className="flex flex-col items-center text-center">
-              <img src={logo} alt="FII Logo" height={70} width={65} />
+              <img src={logo} alt="FII Logo" height={70} width={60} />
               <h1 className="text-white text-sm font-medium">
                 FEDERATION OF Institutes & Industries
               </h1>
