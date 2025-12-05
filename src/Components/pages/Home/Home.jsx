@@ -256,9 +256,11 @@ const Home = () => {
               </button>
 
               {/* Secondary Button */}
-              <button className="px-8 py-3 border border-white text-white font-semibold rounded-xl hover:bg-white hover:text-indigo-700 transition">
+              <Link 
+              to="/Contact"
+              className="px-8 py-3 border border-white text-white font-semibold rounded-xl hover:bg-white hover:text-indigo-700 transition">
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>
