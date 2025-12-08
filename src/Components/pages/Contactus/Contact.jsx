@@ -421,7 +421,7 @@ const Contact = () => {
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <Mail className="w-5 h-5 mr-2" />
-            Email Us Directly
+            Email Us Directly  
           </a>
         </div>
       </div>
