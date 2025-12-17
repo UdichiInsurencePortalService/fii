@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Download, FileText, ArrowRight, CheckCircle, Users, TrendingUp, Network, Heart, BookOpen, Info, Building2, Globe } from 'lucide-react';
-import AOS from "aos";
-import "aos/dist/aos.css"; 
-const Applyform = () => {
-    useEffect(() => {
-          AOS.init({
-            duration: 800,
-            once: false, // ⭐ important if you want re-animation every time
-          });
-        
-        }, []);
 
+const Applyform = () => {
   const [activeTab, setActiveTab] = useState('advantages');
 
+  useEffect(() => {
+    // Simplified animation effect
+    const elements = document.querySelectorAll('[data-fade]');
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, index * 100);
+    });
+  }, [activeTab]);
+
   const handleDownload = () => {
+    // This will download the PDF from your public folder
     const link = document.createElement("a");
-    link.href = "/membership-form-institution.pdf";
-    link.download = "membership-form-institution.pdf";
+    link.href = "/pdf.pdf";  // Path to your PDF in the public folder
+    link.download = "membership-form.pdf";  // Name for downloaded file
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -164,7 +169,6 @@ const Applyform = () => {
         )}
 
         {/* Advantages Tab */}
-
         {activeTab === 'advantages' && (
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
@@ -182,7 +186,7 @@ const Applyform = () => {
               {/* Advantage Cards */}
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 {/* Learning */}
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 sm:p-6 border border-blue-200" data-aos="fade-up">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 sm:p-6 border border-blue-200">
                   <div className="flex items-center gap-3 mb-3 sm:mb-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -210,7 +214,7 @@ const Applyform = () => {
                 </div>
 
                 {/* Networking */}
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 sm:p-6 border border-purple-200" data-aos="fade-down">
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 sm:p-6 border border-purple-200">
                   <div className="flex items-center gap-3 mb-3 sm:mb-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Network className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -230,7 +234,7 @@ const Applyform = () => {
                 </div>
 
                 {/* Sharing */}
-                <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 sm:p-6 border border-green-200" data-aos="fade-right">
+                <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 sm:p-6 border border-green-200">
                   <div className="flex items-center gap-3 mb-3 sm:mb-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -250,7 +254,7 @@ const Applyform = () => {
                 </div>
 
                 {/* Caring */}
-                <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-4 sm:p-6 border border-pink-200" data-aos="fade-left">
+                <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-4 sm:p-6 border border-pink-200">
                   <div className="flex items-center gap-3 mb-3 sm:mb-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" />

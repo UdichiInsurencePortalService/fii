@@ -7,18 +7,16 @@ import img3 from "../../../assets/photo6.jpg";
 import { CalendarDays } from "lucide-react";
 // import React,{useEffect} from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";  
+import "aos/dist/aos.css";
 
 const images = [img1, img2, img3];
 
 const Home = () => {
-
   useEffect(() => {
     AOS.init({
       duration: 800,
       once: false, // ⭐ important if you want re-animation every time
     });
-  
   }, []);
 
   const items = [
@@ -93,34 +91,35 @@ const Home = () => {
   return (
     <>
       <div className="section pt-14">
-        <div className="relative w-full h-96 md:h-[500px] overflow-hidden ">
-          <div className=" md:h-[500px] overflow-hidden">
-            {images.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                className={`absolute top-0 left-0 w-full h-full object-contain object-center transition-opacity duration-700 
+        <div className="relative w-full h-96 md:h-[500px] overflow-hidden">
+  {images.map((img, index) => (
+    <img
+      key={index}
+      src={img}
+      alt=""
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700
         ${currentIndex === index ? "opacity-100" : "opacity-0"}
       `}
-              />
-            ))}
-          </div>
-          {/* Previous Button */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full"
-          >
-            ❮
-          </button>
+    />
+  ))}
 
-          {/* Next Button */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full"
-          >
-            ❯
-          </button>
-        </div>
+  {/* Previous Button */}
+  <button
+    onClick={prevSlide}
+    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full z-10"
+  >
+    ❮
+  </button>
+
+  {/* Next Button */}
+  <button
+    onClick={nextSlide}
+    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full z-10"
+  >
+    ❯
+  </button>
+</div>
+
 
         {/*Overlay text: section  */}
         <div className="w-full bg-gray-50 text-black px-6 py-10 flex justify-center">
@@ -163,7 +162,8 @@ const Home = () => {
               {items.map((it, ind) => (
                 <article
                   key={ind}
-                  className="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300" data-aos="zoom-in"
+                  className="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  data-aos="zoom-in"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 text-xl mb-3">
                     <span>{it.icon}</span>
@@ -217,7 +217,8 @@ const Home = () => {
               {cards.map((card, ind) => (
                 <article
                   key={ind}
-                  className="flex flex-col text-center items-center p-6 bg-amber-100 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300" data-aos="flip-down"
+                  className="flex flex-col text-center items-center p-6 bg-amber-100 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  data-aos="flip-down"
                 >
                   {/* Icon circle */}
                   <div className="flex items-center justify-center w-16 h-16 rounded-full bg-amber-300 text-blue-800 text-3xl mb-4">
@@ -256,9 +257,10 @@ const Home = () => {
               </button>
 
               {/* Secondary Button */}
-              <Link 
-              to="/Contact"
-              className="px-8 py-3 border border-white text-white font-semibold rounded-xl hover:bg-white hover:text-indigo-700 transition">
+              <Link
+                to="/Contact"
+                className="px-8 py-3 border border-white text-white font-semibold rounded-xl hover:bg-white hover:text-indigo-700 transition"
+              >
                 Contact Us
               </Link>
             </div>
