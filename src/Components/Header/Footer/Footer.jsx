@@ -41,7 +41,7 @@ const Footer = () => {
                   Contact
                 </h3>
                 <p className="cursor-pointer">Email: fiiofficial184@gmail.com</p>
-                <p>Phone: +91 08069409202</p>
+                <p>Phone: +91 08069378166</p>
               </div>
 
               {/* Social Media */}

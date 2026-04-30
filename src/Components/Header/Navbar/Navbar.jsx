@@ -12,7 +12,7 @@ const Navbar = () => {
     const errorPaths = [
       "/Institutional",
       "/industry",
-      "/individual-associate",
+      "/Individual",
       // "/benefits",
       "/Research",
       "/workshops-seminars",
@@ -20,12 +20,12 @@ const Navbar = () => {
       // "/media-gallery",
     ];
 
-    if (errorPaths.includes(subItem.path)) {
-      e.preventDefault();
-      toast.error("🚧 This page is under development!");
-    } else {
-      navigate(subItem.path);
-    }
+    // if (errorPaths.includes(subItem.path)) {
+    //   e.preventDefault();
+    //   toast.error("🚧 This page is under development!");
+    // } else {
+    //   navigate(subItem.path);
+    // }
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ const Navbar = () => {
         { name: "Industry Members", path: "/industry" },
         {
           name: "Individual / Associate Members",
-          path: "/individual-associate",
+          path: "/Individual",
         },
         { name: "Membership Advantage", path: "/apply#Advantage" },
         { name: "Apply for Membership", path: "/apply" },
@@ -103,7 +103,7 @@ const Navbar = () => {
             <Link to="/" className="flex flex-col items-center text-center">
               <img src={logo} alt="FII Logo" height={70} width={60} />
               <h1 className="text-white text-sm font-medium">
-                FEDERATION OF Institutes & Industries
+                FEDERATION OF INSTITUTES & INDUSTRIES{" "}
               </h1>
             </Link>
           </div>

@@ -117,7 +117,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Address",
-      details: ["info@fiiindia.org", "support@fiiindia.org"],
+      details: ["fiiofficial184@gmail.com"],
       color: "from-blue-500 to-cyan-500",
     },
     {

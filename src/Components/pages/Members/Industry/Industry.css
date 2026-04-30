@@ -1,0 +1,978 @@
+/* ============================================================
+   INDUSTRY PAGE — Scoped under .industry-page
+   No global overrides. Safe to use alongside any Navbar/Footer.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Variables ── */
+.industry-page {
+  --ink:        #080F1E;
+  --navy:       #0C1A36;
+  --navy-mid:   #112145;
+  --blue:       #1549A8;
+  --blue-light: #1F60CC;
+  --sky:        #3B82F6;
+  --gold:       #C9922A;
+  --gold-light: #E8A83E;
+  --cream:      #F7F4EE;
+  --off-white:  #FAFAF8;
+  --gray-100:   #F1F0ED;
+  --gray-300:   #D4D2CC;
+  --gray-500:   #8C8A84;
+  --gray-700:   #4A4845;
+  --white:      #FFFFFF;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  32px;
+
+  --shadow-sm:  0 2px 8px rgba(8, 15, 30, 0.06);
+  --shadow-md:  0 8px 32px rgba(8, 15, 30, 0.10);
+  --shadow-lg:  0 24px 64px rgba(8, 15, 30, 0.14);
+  --shadow-xl:  0 40px 96px rgba(8, 15, 30, 0.18);
+
+  --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-family: 'Outfit', sans-serif;
+  color: var(--ink);
+  background: var(--off-white);
+  overflow-x: hidden;
+}
+
+/* Scoped reset — only affects children */
+.industry-page *,
+.industry-page *::before,
+.industry-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Shared Utilities ── */
+.industry-page .ip-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.industry-page .ip-section {
+  padding: 108px 0;
+}
+
+.industry-page .ip-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.industry-page .ip-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.industry-page .ip-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+
+.industry-page .ip-title--light {
+  color: var(--white);
+}
+
+.industry-page .ip-subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--gray-500);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.industry-page .ip-subtitle--light {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Buttons ── */
+.industry-page .ip-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 14px 30px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(201, 146, 42, 0.35);
+}
+
+.industry-page .ip-btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(201, 146, 42, 0.45);
+}
+
+.industry-page .ip-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.industry-page .ip-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.industry-page .ip-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--navy);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--navy);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.industry-page .ip-btn-outline:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ============================================================
+   1. HERO SECTION
+   ============================================================ */
+
+.industry-page .ip-hero {
+  position: relative;
+  background: var(--navy);
+  overflow: hidden;
+  padding: 130px 0 100px;
+}
+
+/* Grid texture overlay */
+.industry-page .ip-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Radial glow */
+.industry-page .ip-hero::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(21, 73, 168, 0.35) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.industry-page .ip-hero__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.industry-page .ip-hero__content {}
+
+.industry-page .ip-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+}
+
+.industry-page .ip-hero__eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold-light);
+}
+
+.industry-page .ip-hero__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 700;
+  line-height: 1.0;
+  color: var(--white);
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.industry-page .ip-hero__title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.industry-page .ip-hero__headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.5vw, 27px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.4;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.industry-page .ip-hero__desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 480px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.industry-page .ip-hero__btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Hero Visual — abstract SVG diagram */
+.industry-page .ip-hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.industry-page .ip-hero__diagram {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* Hero trust bar */
+.industry-page .ip-hero__trust {
+  position: relative;
+  z-index: 2;
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.industry-page .ip-hero__trust-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+}
+
+.industry-page .ip-hero__trust-logos {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.industry-page .ip-hero__trust-logo {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.industry-page .ip-hero__trust-logo:hover {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ============================================================
+   2. STATS / IMPACT BAR
+   ============================================================ */
+
+.industry-page .ip-statsbar {
+  background: var(--ink);
+  padding: 0;
+}
+
+.industry-page .ip-statsbar__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid rgba(255,255,255,0.08);
+}
+
+.industry-page .ip-stat {
+  padding: 44px 32px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  transition: var(--transition);
+}
+
+.industry-page .ip-stat:last-child {
+  border-right: none;
+}
+
+.industry-page .ip-stat::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  transition: transform 0.35s ease;
+}
+
+.industry-page .ip-stat:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.industry-page .ip-stat__number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  display: block;
+  letter-spacing: -1px;
+}
+
+.industry-page .ip-stat__number span {
+  color: var(--gold-light);
+  font-size: 38px;
+}
+
+.industry-page .ip-stat__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  display: block;
+}
+
+/* ============================================================
+   3. PARTNERSHIP BENEFITS
+   ============================================================ */
+
+.industry-page .ip-benefits {
+  background: var(--off-white);
+}
+
+.industry-page .ip-benefits__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.industry-page .ip-benefits__header-right {
+  padding-bottom: 4px;
+}
+
+.industry-page .ip-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.industry-page .ip-benefit-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.industry-page .ip-benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--sky));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.industry-page .ip-benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.industry-page .ip-benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.industry-page .ip-benefit-card__num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-300);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.industry-page .ip-benefit-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.industry-page .ip-benefit-card:hover .ip-benefit-card__icon {
+  background: var(--navy);
+}
+
+.industry-page .ip-benefit-card__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.industry-page .ip-benefit-card__desc {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* ============================================================
+   4. HOW IT WORKS
+   ============================================================ */
+
+.industry-page .ip-how {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-page .ip-how::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.industry-page .ip-how .ip-container {
+  position: relative;
+  z-index: 1;
+}
+
+.industry-page .ip-how__header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.industry-page .ip-how__header .ip-eyebrow {
+  justify-content: center;
+  color: var(--gold-light);
+}
+
+.industry-page .ip-how__header .ip-eyebrow::before {
+  background: var(--gold-light);
+}
+
+.industry-page .ip-how__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Connecting line */
+.industry-page .ip-how__steps::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: calc(12.5% + 20px);
+  right: calc(12.5% + 20px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,146,42,0.4), rgba(201,146,42,0.4), transparent);
+  z-index: 0;
+}
+
+.industry-page .ip-step {
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.industry-page .ip-step__circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201, 146, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  font-size: 28px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.industry-page .ip-step:hover .ip-step__circle {
+  background: rgba(201, 146, 42, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 0 40px rgba(201, 146, 42, 0.2);
+}
+
+.industry-page .ip-step__num {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+}
+
+.industry-page .ip-step__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.industry-page .ip-step__desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.75;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   5. WHY PARTNER WITH US
+   ============================================================ */
+
+.industry-page .ip-why {
+  background: var(--cream);
+}
+
+.industry-page .ip-why__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.industry-page .ip-why__visual {
+  position: relative;
+}
+
+.industry-page .ip-why__visual-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-page .ip-why__visual-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--sky));
+}
+
+.industry-page .ip-why__big-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 100px;
+  font-weight: 700;
+  color: var(--gray-100);
+  line-height: 1;
+  letter-spacing: -4px;
+  display: block;
+  margin-bottom: -12px;
+}
+
+.industry-page .ip-why__big-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.industry-page .ip-why__visual-text {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.75;
+}
+
+.industry-page .ip-why__badge {
+  position: absolute;
+  bottom: -20px;
+  right: 32px;
+  background: var(--gold);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 28px rgba(201,146,42,0.4);
+}
+
+.industry-page .ip-why__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.industry-page .ip-why__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gray-300);
+  transition: var(--transition);
+}
+
+.industry-page .ip-why__item:last-child {
+  border-bottom: none;
+}
+
+.industry-page .ip-why__item:hover {
+  padding-left: 8px;
+}
+
+.industry-page .ip-why__item-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.industry-page .ip-why__item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.industry-page .ip-why__item-desc {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+/* ============================================================
+   6. CTA SECTION
+   ============================================================ */
+
+.industry-page .ip-cta {
+  background: var(--ink);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-page .ip-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(21,73,168,0.3) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.industry-page .ip-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.industry-page .ip-cta .ip-container {
+  position: relative;
+  z-index: 1;
+}
+
+.industry-page .ip-cta__kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.industry-page .ip-cta__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5.5vw, 70px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.industry-page .ip-cta__title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.industry-page .ip-cta__sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 48px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.industry-page .ip-cta__btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.industry-page .ip-cta__note {
+  margin-top: 28px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.22);
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+.industry-page .ip-fade-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.industry-page .ip-fade-up.ip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.industry-page .ip-fade-up--d1 { transition-delay: 0.1s; }
+.industry-page .ip-fade-up--d2 { transition-delay: 0.2s; }
+.industry-page .ip-fade-up--d3 { transition-delay: 0.3s; }
+.industry-page .ip-fade-up--d4 { transition-delay: 0.4s; }
+.industry-page .ip-fade-up--d5 { transition-delay: 0.5s; }
+.industry-page .ip-fade-up--d6 { transition-delay: 0.6s; }
+
+/* Counter animation */
+.industry-page .ip-stat__number.ip-counting {
+  animation: ip-pulse 0.06s ease;
+}
+
+@keyframes ip-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .industry-page .ip-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .industry-page .ip-hero__visual {
+    display: none;
+  }
+  .industry-page .ip-hero__desc {
+    max-width: 100%;
+  }
+  .industry-page .ip-benefits__header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .industry-page .ip-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .industry-page .ip-how__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+  .industry-page .ip-how__steps::before {
+    display: none;
+  }
+  .industry-page .ip-why__inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .industry-page .ip-statsbar__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .industry-page .ip-stat:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-page .ip-container {
+    padding: 0 24px;
+  }
+  .industry-page .ip-section {
+    padding: 72px 0;
+  }
+  .industry-page .ip-benefits__grid {
+    grid-template-columns: 1fr;
+  }
+  .industry-page .ip-how__steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .industry-page .ip-hero {
+    padding: 80px 0 72px;
+  }
+  .industry-page .ip-hero__trust {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .industry-page .ip-hero__trust-logos {
+    gap: 20px;
+  }
+  .industry-page .ip-statsbar__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .industry-page .ip-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .industry-page .ip-stat:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.07);
+  }
+}
+
+@media (max-width: 480px) {
+  .industry-page .ip-hero__btns {
+    flex-direction: column;
+  }
+  .industry-page .ip-btn-primary,
+  .industry-page .ip-btn-secondary,
+  .industry-page .ip-btn-outline {
+    justify-content: center;
+    text-align: center;
+  }
+  .industry-page .ip-cta__btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}

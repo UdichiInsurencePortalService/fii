@@ -19,6 +19,9 @@ import Contact from "./Components/pages/Contactus/Contact";
 import Gallery from "./Components/pages/Gallery/Gallery";
 import Newsactivity from "./Components/pages/Events-News/Newsactivity";
 import Dailynews from "./Components/pages/Fii-News/Dailynews";
+import Industry from "./Components/pages/Members/Industry/Industry";
+import Individual from "./Components/pages/Members/Individual/Individual"
+
 
 function App() {
   return (
@@ -32,7 +35,6 @@ function App() {
         <Route path="/visionmission" element={<Visionmission />} />
         <Route path="/Objectives" element={<Objectives />} />
         <Route path="/Governing" element={<Governing />} />
-        <Route path="/Institutional" element={<Institutional />} />
         <Route path="/apply" element={<Applyform />} />
         <Route path="/Skill" element={<Skill />} />
         <Route path="/Research" element={<Research />} />
@@ -42,6 +44,11 @@ function App() {
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Newsactivity" element={<Newsactivity />} />
         <Route path="/DailyNews" element={<Dailynews />} />
+        <Route path="/Institutional" element={<Institutional />} />
+        <Route path="/Industry" element={<Industry />} />
+        <Route path="/Individual" element={<Individual />} />
+
+        {/* <Route path="/Institutional" element={<Institutional />} /> */}
       </Routes>
 
       <Footer />

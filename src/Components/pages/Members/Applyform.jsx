@@ -1,16 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Download, FileText, ArrowRight, CheckCircle, Users, TrendingUp, Network, Heart, BookOpen, Info, Building2, Globe } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Download,
+  FileText,
+  ArrowRight,
+  CheckCircle,
+  Users,
+  TrendingUp,
+  Network,
+  Heart,
+  BookOpen,
+  Info,
+  Building2,
+  Globe,
+} from "lucide-react";
 
 const Applyform = () => {
-  const [activeTab, setActiveTab] = useState('advantages');
+  const [activeTab, setActiveTab] = useState("advantages");
 
   useEffect(() => {
     // Simplified animation effect
-    const elements = document.querySelectorAll('[data-fade]');
+    const elements = document.querySelectorAll("[data-fade]");
     elements.forEach((el, index) => {
       setTimeout(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
       }, index * 100);
     });
   }, [activeTab]);
@@ -18,8 +31,8 @@ const Applyform = () => {
   const handleDownload = () => {
     // This will download the PDF from your public folder
     const link = document.createElement("a");
-    link.href = "/pdf.pdf";  // Path to your PDF in the public folder
-    link.download = "membership-form.pdf";  // Name for downloaded file
+    link.href = "/pdf.pdf"; // Path to your PDF in the public folder
+    link.download = "membership-form.pdf"; // Name for downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -45,33 +58,33 @@ const Applyform = () => {
         <div className="flex justify-center mb-8 px-2">
           <div className="inline-flex flex-col sm:flex-row bg-white rounded-lg shadow-md p-1 w-full sm:w-auto max-w-lg">
             <button
-              onClick={() => setActiveTab('about')}
+              onClick={() => setActiveTab("about")}
               className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                activeTab === 'about'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                  : 'text-gray-600 hover:text-gray-900'
+                activeTab === "about"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               <Info className="w-4 h-4 sm:w-5 sm:h-5" />
               About
             </button>
             <button
-              onClick={() => setActiveTab('advantages')}
+              onClick={() => setActiveTab("advantages")}
               className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                activeTab === 'advantages'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                  : 'text-gray-600 hover:text-gray-900'
+                activeTab === "advantages"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
               Advantages
             </button>
             <button
-              onClick={() => setActiveTab('download')}
+              onClick={() => setActiveTab("download")}
               className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all text-sm sm:text-base ${
-                activeTab === 'download'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                  : 'text-gray-600 hover:text-gray-900'
+                activeTab === "download"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               <Download className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -82,7 +95,7 @@ const Applyform = () => {
         </div>
 
         {/* About Membership Tab */}
-        {activeTab === 'about' && (
+        {activeTab === "about" && (
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
               <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center gap-2 sm:gap-3">
@@ -95,10 +108,18 @@ const Applyform = () => {
               {/* Introduction */}
               <div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  The <strong>Federation of Institutes & Industries (FII)</strong> works to create and sustain an environment conducive to the development of India, partnering industry, Government, and civil society, through advisory and consultative processes.
+                  The{" "}
+                  <strong>Federation of Institutes & Industries (FII)</strong>{" "}
+                  works to create and sustain an environment conducive to the
+                  development of India, partnering industry, Government, and
+                  civil society, through advisory and consultative processes.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  FII is a non-government, not-for-profit, industry-led and industry-managed organization, playing a proactive role in India's development process. India's premier business association has members from Institute, private as well as public sectors, including SMEs and MNCs.
+                  FII is a non-government, not-for-profit, industry-led and
+                  industry-managed organization, playing a proactive role in
+                  India's development process. India's premier business
+                  association has members from Institute, private as well as
+                  public sectors, including SMEs and MNCs.
                 </p>
               </div>
 
@@ -109,7 +130,8 @@ const Applyform = () => {
                   <span>Who Can Join?</span>
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  FII membership is open to any Company or Firm in India engaged in:
+                  FII membership is open to any Company or Firm in India engaged
+                  in:
                 </p>
                 <ul className="space-y-2 text-sm sm:text-base text-gray-700">
                   <li className="flex items-start gap-2">
@@ -118,19 +140,29 @@ const Applyform = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Consultancy services (Engineering/Technical/Management)</span>
+                    <span>
+                      Consultancy services (Engineering/Technical/Management)
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Services sector: Banks, Financial Institutions, Law Firms, Hospitals</span>
+                    <span>
+                      Services sector: Banks, Financial Institutions, Law Firms,
+                      Hospitals
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Travel/Tourism & Hospitality, Films, Media: Print and Electronic</span>
+                    <span>
+                      Travel/Tourism & Hospitality, Films, Media: Print and
+                      Electronic
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Digital Entertainment, Advertising, Publishing, Fashion</span>
+                    <span>
+                      Digital Entertainment, Advertising, Publishing, Fashion
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -138,15 +170,23 @@ const Applyform = () => {
               {/* Important Notes */}
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="border-l-4 border-purple-500 bg-purple-50 p-4 sm:p-6 rounded-r-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Associate Membership</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
+                    Associate Membership
+                  </h4>
                   <p className="text-gray-700 text-xs sm:text-sm">
-                    India Liaison Offices operating with the approval of Reserve Bank, without any Sales Turnover in India, are eligible for Associate Membership.
+                    India Liaison Offices operating with the approval of Reserve
+                    Bank, without any Sales Turnover in India, are eligible for
+                    Associate Membership.
                   </p>
                 </div>
                 <div className="border-l-4 border-blue-500 bg-blue-50 p-4 sm:p-6 rounded-r-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Membership Policy</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
+                    Membership Policy
+                  </h4>
                   <p className="text-gray-700 text-xs sm:text-sm">
-                    There is no Individual membership in FII. Companies from the same group must take up membership separately, as there is no group membership.
+                    There is no Individual membership in FII. Companies from the
+                    same group must take up membership separately, as there is
+                    no group membership.
                   </p>
                 </div>
               </div>
@@ -158,10 +198,21 @@ const Applyform = () => {
                   <span>What FII Does</span>
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  FII charts change by working closely with Government on policy issues, interfacing with thought leaders, and enhancing efficiency, competitiveness and business opportunities for industry through a range of specialized services and strategic global linkages. It also provides a platform for consensus-building and networking on key issues.
+                  FII charts change by working closely with Government on policy
+                  issues, interfacing with thought leaders, and enhancing
+                  efficiency, competitiveness and business opportunities for
+                  industry through a range of specialized services and strategic
+                  global linkages. It also provides a platform for
+                  consensus-building and networking on key issues.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Extending its agenda beyond business, FII assists industry to identify and execute corporate citizenship programmes. Partnerships with civil society organizations carry forward corporate initiatives for integrated and inclusive development across diverse domains including affirmative action, healthcare, education, livelihood, diversity management, skill development, empowerment of women, and water, to name a few.
+                  Extending its agenda beyond business, FII assists industry to
+                  identify and execute corporate citizenship programmes.
+                  Partnerships with civil society organizations carry forward
+                  corporate initiatives for integrated and inclusive development
+                  across diverse domains including affirmative action,
+                  healthcare, education, livelihood, diversity management, skill
+                  development, empowerment of women, and water, to name a few.
                 </p>
               </div>
             </div>
@@ -169,7 +220,7 @@ const Applyform = () => {
         )}
 
         {/* Advantages Tab */}
-        {activeTab === 'advantages' && (
+        {activeTab === "advantages" && (
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
               <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center gap-2 sm:gap-3">
@@ -180,7 +231,12 @@ const Applyform = () => {
 
             <div className="p-4 sm:p-6 lg:p-12 space-y-6 sm:space-y-8">
               <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                As a member of FII, you will access the world of opportunities, from networking with the corporate majors of Indian and global industry to assisting in framing economic and industrial policies, through close linkage with the government. FII's proactive approach focuses on helping you to increase efficiency and competitiveness.
+                As a member of FII, you will access the world of opportunities,
+                from networking with the corporate majors of Indian and global
+                industry to assisting in framing economic and industrial
+                policies, through close linkage with the government. FII's
+                proactive approach focuses on helping you to increase efficiency
+                and competitiveness.
               </p>
 
               {/* Advantage Cards */}
@@ -191,24 +247,35 @@ const Applyform = () => {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">Learning</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                      Learning
+                    </h3>
                   </div>
                   <ul className="space-y-2 sm:space-y-3">
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Global trends that affect your business</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Global trends that affect your business
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Industry best practices on competitiveness</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Industry best practices on competitiveness
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Improve internal efficiency and productivity</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Improve internal efficiency and productivity
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Get an insight into Government policies and their impact on businesses</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Get an insight into Government policies and their impact
+                        on businesses
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -219,16 +286,24 @@ const Applyform = () => {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Network className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">Networking</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                      Networking
+                    </h3>
                   </div>
                   <ul className="space-y-2 sm:space-y-3">
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Networking opportunities with Indian and Global Corporate Majors</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Networking opportunities with Indian and Global
+                        Corporate Majors
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Platform to enhance your business and develop newer markets</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Platform to enhance your business and develop newer
+                        markets
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -239,16 +314,22 @@ const Applyform = () => {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">Sharing</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                      Sharing
+                    </h3>
                   </div>
                   <ul className="space-y-2 sm:space-y-3">
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Share your best practices with other members</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Share your best practices with other members
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Help enhance competitiveness of Indian Industry</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Help enhance competitiveness of Indian Industry
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -259,16 +340,24 @@ const Applyform = () => {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">Caring</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                      Caring
+                    </h3>
                   </div>
                   <ul className="space-y-2 sm:space-y-3">
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Opportunity to give back to society</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Opportunity to give back to society
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-gray-700">Get involved with important initiatives in Child Education, Women Empowerment, Fight against HIV/AIDS, Disaster management, etc.</span>
+                      <span className="text-sm sm:text-base text-gray-700">
+                        Get involved with important initiatives in Child
+                        Education, Women Empowerment, Fight against HIV/AIDS,
+                        Disaster management, etc.
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -278,7 +367,7 @@ const Applyform = () => {
         )}
 
         {/* Download Form Tab */}
-        {activeTab === 'download' && (
+        {activeTab === "download" && (
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
               <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center gap-2 sm:gap-3">
@@ -291,21 +380,33 @@ const Applyform = () => {
               <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-sm sm:text-base">1</span>
+                    <span className="text-blue-600 font-bold text-sm sm:text-base">
+                      1
+                    </span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Download the Form</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm">Click the button below to get your membership form</p>
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
+                      Download the Form
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      Click the button below to get your membership form
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-sm sm:text-base">2</span>
+                    <span className="text-purple-600 font-bold text-sm sm:text-base">
+                      2
+                    </span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Fill Out Details</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm">Complete all required information carefully</p>
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
+                      Fill Out Details
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      Complete all required information carefully
+                    </p>
                   </div>
                 </div>
 
@@ -314,8 +415,12 @@ const Applyform = () => {
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Submit & Join</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm">Send your completed form and become a member</p>
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
+                      Submit & Join
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      Send your completed form and become a member
+                    </p>
                   </div>
                 </div>
               </div>
@@ -329,7 +434,7 @@ const Applyform = () => {
                   Download Form
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                
+
                 <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500">
                   PDF format • Easy to fill • Printable
                 </p>
@@ -348,9 +453,12 @@ const Applyform = () => {
         {/* Contact Info */}
         <div className="mt-6 sm:mt-8 text-center px-4">
           <p className="text-sm sm:text-base text-gray-600">
-            Need help? Contact us at{' '}
-            <a href="mailto:support@fii.org" className="text-blue-600 hover:underline font-medium break-all">
-              support@fii.org
+            Need help? Contact us at{" "}
+            <a
+              href="mailto:fiiofficial184@gmail.com"
+              className="text-blue-600 hover:underline font-medium break-all"
+            >
+              fiiofficial184@gmail.com
             </a>
           </p>
         </div>
