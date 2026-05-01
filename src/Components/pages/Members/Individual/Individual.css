@@ -51,6 +51,7 @@
 .individual-page__section-header {
   text-align: center;
   margin-bottom: 56px;
+  /* color: white; */
 }
 .individual-page__section-tag {
   display: inline-block;

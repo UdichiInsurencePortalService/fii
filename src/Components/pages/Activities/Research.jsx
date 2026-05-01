@@ -328,13 +328,13 @@ export default function Research() {
       >
         <div className="research-page__programs-bg" aria-hidden="true" />
         <div className="research-page__container">
-          <div className="research-page__section-head research-page__section-head--light">
+          {/* <div className="research-page__section-head research-page__section-head--light">
             <span className="research-page__section-kicker research-page__section-kicker--light">Initiatives</span>
             <h2 className="research-page__section-title research-page__section-title--light">Innovation Programs</h2>
             <p className="research-page__section-sub research-page__section-sub--light">
               Structured pathways turning bold ideas into deployable innovations.
             </p>
-          </div>
+          </div> */}
           <div className="research-page__programs-grid">
             {PROGRAMS.map((p, i) => (
               <div

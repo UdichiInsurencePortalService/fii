@@ -231,12 +231,12 @@ export default function Industry() {
               </p>
 
               <div className="ip-hero__btns">
-                <a href="#cta" className="ip-btn-primary">
+                {/* <a href="#cta" className="ip-btn-primary">
                   Join as Industry Partner →
-                </a>
-                <a href="#contact" className="ip-btn-secondary">
+                </a> */}
+                <Link to="/contact" className="ip-btn-secondary">
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -402,9 +402,9 @@ export default function Industry() {
             <Link to="/apply" className="ip-btn-primary">
                 Apply for Membership →
               </Link>{" "}
-            <a href="#contact" className="ip-btn-secondary">
+            <Link to="/contact" className="ip-btn-secondary">
               📞 Talk to an Advisor
-            </a>
+            </Link>
           </div>
 
           <p className="ip-cta__note ip-fade-up ip-fade-up--d4">

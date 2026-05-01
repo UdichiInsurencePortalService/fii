@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = "/BROUCHURE.pdf";
+  link.download = "FII-Brochure.pdf";
+  link.click();
+};
+
 import React from "react";
 const style = `
 
@@ -847,9 +855,12 @@ export default function FIIInstitutionalMembers() {
                 <a href="#cta" className="btn-primary">
                   Become a Member
                 </a>
-                <a href="#" className="btn-outline">
+                {/* <Link to="/apply" className="btn-outline">
                   <span>📄</span> Download Brochure
-                </a>
+                </Link> */}
+                <button onClick={handleDownload} className="btn-outline">
+  📄 Download Brochure
+</button>
               </div>
             </div>
             <div className="hero-visual">
@@ -1094,13 +1105,13 @@ export default function FIIInstitutionalMembers() {
               <Link to="/apply" className="btn-primary">
                 Apply for Membership
               </Link>{" "}
-              <a
-                href="#"
+              <Link
+              to="/contact"
                 className="btn-outline"
                 style={{ fontSize: 16, padding: "16px 36px" }}
               >
                 <span>📞</span> Talk to an Advisor
-              </a>
+              </Link>
             </div>
           </div>
         </section>

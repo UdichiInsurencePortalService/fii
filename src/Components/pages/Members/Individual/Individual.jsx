@@ -312,10 +312,10 @@ export default function Individual() {
       <section className={`individual-page__stats ${statsVisible ? "is-visible" : ""}`} ref={statsRef}>
         <div className="individual-page__stats-bg" aria-hidden="true" />
         <div className="individual-page__container">
-          <div className="individual-page__section-header individual-page__section-header--light">
+          {/* <div className="individual-page__section-header individual-page__section-header--light">
             <span className="individual-page__section-tag individual-page__section-tag--light">Impact</span>
             <h2 className="individual-page__section-title individual-page__section-title--light">Member Impact at a Glance</h2>
-          </div>
+          </div> */}
           <div className="individual-page__stats-grid">
             {STATS.map((s) => (
               <div key={s.label} className="individual-page__stat-card">

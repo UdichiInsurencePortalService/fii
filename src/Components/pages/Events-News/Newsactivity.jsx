@@ -17,6 +17,9 @@ import Activity7 from "../../../assets/Activity-photots/Activity7.jpg"
 
 import Activity8 from "../../../assets/Activity-photots/Activity8.jpg"
 
+import g91 from "../../../assets/Galleryphotos/images91.jpg";
+
+
 
 
 const Newsactivity = () => {
@@ -24,6 +27,8 @@ const Newsactivity = () => {
 
   // Simulated images - replace with your actual imports
   const images = [
+
+    {image: g91 },
     { image: Activity1 },
     { image:  Activity2},
     { image:  Activity3},

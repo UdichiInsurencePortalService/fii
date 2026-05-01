@@ -108,13 +108,15 @@ import g89 from "../../../assets/Galleryphotos/images89.jpg";
 
 import g90 from "../../../assets/Galleryphotos/images90.jpg";
 
+import g91 from "../../../assets/Galleryphotos/images91.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Simulated images - replace with your actual imports
   const images = [
-    
+        {image: g91},
+
     { image: g11 },
     { image: g12 },
     { image: g13 },
@@ -205,6 +207,7 @@ const Gallery = () => {
     { image: g8 },
     { image: g9 },
     { image: g10 },
+    
 
   ];
 

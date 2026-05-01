@@ -669,7 +669,7 @@
 
 .industry-page .ip-why__big-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 100px;
+  font-size: 80px;
   font-weight: 700;
   color: var(--gray-100);
   line-height: 1;
@@ -699,7 +699,9 @@
   right: 32px;
   background: var(--gold);
   color: var(--white);
-  padding: 14px 22px;
+  padding: 12px 12px;
+  margin-top: 5px;
+  margin-bottom: 30px;
   border-radius: var(--radius-md);
   font-size: 12px;
   font-weight: 700;

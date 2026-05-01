@@ -21,6 +21,7 @@ import Newsactivity from "./Components/pages/Events-News/Newsactivity";
 import Dailynews from "./Components/pages/Fii-News/Dailynews";
 import Industry from "./Components/pages/Members/Industry/Industry";
 import Individual from "./Components/pages/Members/Individual/Individual"
+import ScrollToTopButton from "./Components/pages/ScrollToTopButton/ScrollToTopButton";
 
 
 function App() {
@@ -52,6 +53,8 @@ function App() {
       </Routes>
 
       <Footer />
+
+      <ScrollToTopButton />
     </>
   );
 }
