@@ -15,7 +15,7 @@ const Navbar = () => {
       "/Individual",
       // "/benefits",
       "/Research",
-      "/workshops-seminars",
+      "/Workshops-",
       "/csr-social-impact",
       // "/media-gallery",
     ];
@@ -60,7 +60,7 @@ const Navbar = () => {
       subItems: [
         { name: "Skill Development", path: "/Skill" },
         { name: "Research & Innovation", path: "/Research" },
-        { name: "Workshops / Seminars", path: "/workshops-seminars" },
+        { name: "Workshops / Seminars", path: "/Workshops" },
         { name: "CSR & Social Impact", path: "/csr-social-impact" },
       ],
     },

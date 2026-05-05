@@ -1,42 +1,40 @@
 import React, { useEffect, useState } from "react";
 
+import Activity1 from "../../../assets/Activity-photots/Activity1.jpg";
 
-import Activity1 from "../../../assets/Activity-photots/Activity1.jpg"
+import Activity2 from "../../../assets/Activity-photots/Activity2.jpg";
 
-import Activity2 from "../../../assets/Activity-photots/Activity2.jpg"
+import Activity3 from "../../../assets/Activity-photots/Activity3.jpg";
 
-import Activity3 from "../../../assets/Activity-photots/Activity3.jpg"
+import Activity4 from "../../../assets/Activity-photots/Activity4.jpg";
 
-import Activity4 from "../../../assets/Activity-photots/Activity4.jpg"
+import Activity5 from "../../../assets/Activity-photots/Activity5.jpg";
 
-import Activity5 from "../../../assets/Activity-photots/Activity5.jpg"
+import Activity6 from "../../../assets/Activity-photots/Activity6.jpg";
 
-import Activity6 from "../../../assets/Activity-photots/Activity6.jpg"
+import Activity7 from "../../../assets/Activity-photots/Activity7.jpg";
 
-import Activity7 from "../../../assets/Activity-photots/Activity7.jpg"
-
-import Activity8 from "../../../assets/Activity-photots/Activity8.jpg"
+import Activity8 from "../../../assets/Activity-photots/Activity8.jpg";
 
 import g91 from "../../../assets/Galleryphotos/images91.jpg";
 
-
-
+import g92 from "../../../assets/Galleryphotos/images92.jpg";
 
 const Newsactivity = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Simulated images - replace with your actual imports
   const images = [
-
-    {image: g91 },
+    { image: g92 },
+    { image: g91 },
     { image: Activity1 },
-    { image:  Activity2},
-    { image:  Activity3},
-    { image:  Activity4},
-    { image:  Activity5},
-    { image:  Activity6},
-    { image:  Activity7},
-    { image:  Activity8},
+    { image: Activity2 },
+    { image: Activity3 },
+    { image: Activity4 },
+    { image: Activity5 },
+    { image: Activity6 },
+    { image: Activity7 },
+    { image: Activity8 },
   ];
 
   useEffect(() => {
@@ -65,9 +63,10 @@ const Newsactivity = () => {
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-16 text-center opacity-0 animate-fade-in">
         <h1 className="text-6xl font-bold text-white mb-4 tracking-tight">
-          Our{" "}News
+          Our News
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-             {" "}Activity Gallery
+            {" "}
+            Activity Gallery
           </span>
         </h1>
         <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>

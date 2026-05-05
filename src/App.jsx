@@ -22,6 +22,7 @@ import Dailynews from "./Components/pages/Fii-News/Dailynews";
 import Industry from "./Components/pages/Members/Industry/Industry";
 import Individual from "./Components/pages/Members/Individual/Individual"
 import ScrollToTopButton from "./Components/pages/ScrollToTopButton/ScrollToTopButton";
+import Workshops from "./Components/pages/Activities/Workshops/Workshops";
 
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
         <Route path="/Institutional" element={<Institutional />} />
         <Route path="/Industry" element={<Industry />} />
         <Route path="/Individual" element={<Individual />} />
+
+        <Route path="/Workshops" element={<Workshops />} />
 
         {/* <Route path="/Institutional" element={<Institutional />} /> */}
       </Routes>
