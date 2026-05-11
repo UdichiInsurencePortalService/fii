@@ -61,7 +61,7 @@ const Navbar = () => {
         { name: "Skill Development", path: "/Skill" },
         { name: "Research & Innovation", path: "/Research" },
         { name: "Workshops / Seminars", path: "/Workshops" },
-        { name: "CSR & Social Impact", path: "/csr-social-impact" },
+        // { name: "CSR & Social Impact", path: "/csr-social-impact" },
       ],
     },
     {

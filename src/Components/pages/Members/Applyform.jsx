@@ -28,10 +28,11 @@ const Applyform = () => {
     });
   }, [activeTab]);
 
+  
   const handleDownload = () => {
     // This will download the PDF from your public folder
     const link = document.createElement("a");
-    link.href = "/pdf.pdf"; // Path to your PDF in the public folder
+    link.href = "/membership-form (3).pdf"; // Path to your PDF in the public folder
     link.download = "membership-form.pdf"; // Name for downloaded file
     document.body.appendChild(link);
     link.click();

@@ -8,7 +8,7 @@ const industryWorkshops = [
     id: 1,
     title: "Industry 4.0 – Building the Future Today",
     city: "Kolkata",
-    date: "20th June 2025 (Friday)",
+    date: "20th June 2026 (Friday)",
     time: "9:30 AM – 5:00 PM",
     venue: "The Lalit Great Eastern Kolkata",
     agenda: [
@@ -25,7 +25,7 @@ const industryWorkshops = [
     id: 2,
     title: "Sustainable Industries – Green Today, Greener Tomorrow",
     city: "Delhi",
-    date: "18th July 2025",
+    date: "18th July 2026",
     time: "9:30 AM – 5:00 PM",
     venue: "The Leela Ambience Convention Hotel",
     agenda: [
@@ -42,7 +42,7 @@ const industryWorkshops = [
     id: 3,
     title: "Global Competitiveness – Innovate, Integrate, Elevate",
     city: "Mumbai",
-    date: "22nd August 2025",
+    date: "22nd August 2026",
     time: "9:30 AM – 5:00 PM",
     venue: "The Taj Lands End",
     agenda: [
@@ -59,7 +59,7 @@ const industryWorkshops = [
     id: 4,
     title: "Human Capital – The Engine of Growth",
     city: "Chennai",
-    date: "19th September 2025",
+    date: "19th September 2026",
     time: "9:30 AM – 5:00 PM",
     venue: "The Leela Palace Chennai",
     agenda: [
@@ -79,7 +79,7 @@ const institutionalWorkshops = [
     id: 5,
     title: "Future Ready Institutions, Empowered Students",
     city: "Kolkata",
-    date: "21st June 2025",
+    date: "21st June 2026",
     time: "10:00 AM – 4:30 PM",
     venue: "TBA",
     agenda: [
@@ -96,7 +96,7 @@ const institutionalWorkshops = [
     id: 6,
     title: "Learn Today, Lead Tomorrow",
     city: "Delhi",
-    date: "19th July 2025",
+    date: "19th July 2026",
     time: "10:00 AM – 4:30 PM",
     venue: "TBA",
     agenda: [
@@ -113,7 +113,7 @@ const institutionalWorkshops = [
     id: 7,
     title: "Innovate. Collaborate. Elevate.",
     city: "Mumbai",
-    date: "23rd August 2025",
+    date: "23rd August 2026",
     time: "10:00 AM – 4:30 PM",
     venue: "TBA",
     agenda: [
@@ -130,7 +130,7 @@ const institutionalWorkshops = [
     id: 8,
     title: "Educate. Engage. Excel.",
     city: "Chennai",
-    date: "20th September 2025",
+    date: "20th September 2026",
     time: "10:00 AM – 4:30 PM",
     venue: "TBA",
     agenda: [
@@ -376,8 +376,8 @@ export default function Workshops() {
           <div className="section-header">
             <div className="section-label">
               {activeTab === "industry"
-                ? "Industry Series 2025"
-                : "Institutional Series 2025"}
+                ? "Industry Series 2026"
+                : "Institutional Series 2026"}
             </div>
             <h2 className="section-title">
               {activeTab === "industry"
@@ -402,7 +402,7 @@ export default function Workshops() {
       {/* City Timeline */}
       <section className="city-timeline-section">
         <div className="timeline-container">
-          <div className="timeline-label">2025 Tour</div>
+          <div className="timeline-label">2026 Tour</div>
           <div className="timeline-track">
             {["Kolkata", "Delhi", "Mumbai", "Chennai"].map((city, i) => (
               <div className="timeline-stop" key={city}>

@@ -16,28 +16,28 @@ const Skill = () => {
     {
       id: 1,
       title: "Opening of the PM-VIKAS Portal for Submission of Proposals",
-      date: "November 19, 2025",
+      date: "November 19, 2026",
       description: "Government of India, Ministry of Minority Affairs (Skill Division) has issued a notification for the opening of PM-VIKAS Portal for submission of proposals. This initiative aims to enhance skill development among minority communities.",
       applyLink: "https://skillspedia.in/opening-of-the-pm-vikas-portal-for-submission-of-proposals/"
     },
     {
       id: 2,
       title: "RFP for Self-Defense Training Partner under Mission Shakti, Odisha",
-      date: "November 17, 2025",
+      date: "November 17, 2026",
       description: "The National Commission for Women (NCW) has released a Request for Proposal (RFP) for empanelment of training partners to conduct self-defense training programs under Mission Shakti initiative in Odisha.",
       applyLink: "https://skillspedia.in/rfp-for-self-defense-training-partner-under-mission-shakti-odisha/"
     },
     {
       id: 3,
       title: "Notice Inviting Proposal for Hiring of Implementation Agency for Execution of CSR Projects",
-      date: "November 13, 2025",
+      date: "November 13, 2026",
       description: "Summary of NSTFDC EOI/RFP for Hiring Implementation Agency for CSR Projects. The notice invites proposals from eligible agencies to implement various CSR initiatives focused on skill development and community welfare.",
       applyLink: "https://skillspedia.in/notice-inviting-proposal-for-hiring-of-implementation-agency-for-execution-of-csr-projects/"
     },
     {
       id: 4,
       title: "Tender for Engaging Agencies to Provide Skill Trainers & Helpers to Undertake Skill Training under PM-VIKAS Scheme in Punjab",
-      date: "November 12, 2025",
+      date: "November 12, 2026",
       description: "Detailed Summary: Tender for Engaging Skill Training Agencies under PM VIKAS in Punjab. This tender seeks qualified agencies to provide skilled trainers and support staff for various vocational training programs.",
       applyLink: "https://skillspedia.in/tender-for-engaging-agencies-to-provide-skill-trainers-helpers-to-undertake-skill-training-under-pm-vikas-scheme-in-punjab/"
     }
