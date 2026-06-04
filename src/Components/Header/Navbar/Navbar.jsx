@@ -16,7 +16,7 @@ const Navbar = () => {
       // "/benefits",
       "/Research",
       "/Workshops-",
-      "/csr-social-impact",
+      "/csrsocial",
       // "/media-gallery",
     ];
 
@@ -61,7 +61,7 @@ const Navbar = () => {
         { name: "Skill Development", path: "/Skill" },
         { name: "Research & Innovation", path: "/Research" },
         { name: "Workshops / Seminars", path: "/Workshops" },
-        // { name: "CSR & Social Impact", path: "/csr-social-impact" },
+        { name: "Fii Membership List", path: "/MembershipList" },
       ],
     },
     {

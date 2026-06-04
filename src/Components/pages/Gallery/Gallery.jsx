@@ -112,15 +112,17 @@ import g91 from "../../../assets/Galleryphotos/images91.jpg";
 
 import g92 from "../../../assets/Galleryphotos/images92.jpg";
 
+import g93 from "../../../assets/Fii-cirtificate/IMAGE/FII Certificate-1.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Simulated images - replace with your actual imports
   const images = [
-
-    { image: g92},
-    { image: g91},
+    
+    { image: g93 },
+    { image: g92 },
+    { image: g91 },
     { image: g11 },
     { image: g12 },
     { image: g13 },
@@ -211,8 +213,6 @@ const Gallery = () => {
     { image: g8 },
     { image: g9 },
     { image: g10 },
-    
-
   ];
 
   useEffect(() => {

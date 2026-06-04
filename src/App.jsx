@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-
 import Home from "./Components/pages/Home/Home";
 import Navbar from "./Components/Header/Navbar/Navbar";
 import Footer from "./Components/Header/Footer/Footer";
@@ -23,6 +22,7 @@ import Industry from "./Components/pages/Members/Industry/Industry";
 import Individual from "./Components/pages/Members/Individual/Individual"
 import ScrollToTopButton from "./Components/pages/ScrollToTopButton/ScrollToTopButton";
 import Workshops from "./Components/pages/Activities/Workshops/Workshops";
+import MembershipList from "./Components/pages/MembershipList/MembershipList";
 
 
 function App() {
@@ -51,6 +51,7 @@ function App() {
         <Route path="/Individual" element={<Individual />} />
 
         <Route path="/Workshops" element={<Workshops />} />
+        <Route path="/MembershipList" element={<MembershipList />} />
 
         {/* <Route path="/Institutional" element={<Institutional />} /> */}
       </Routes>
